@@ -12,7 +12,16 @@
   <body>
     <main class="hero">
       <h1 class="hero-title">The fun will never end, it&rsquo;s Adventure Time!</h1>
-      <img class="hero-gif" src="./assets/images/main.gif" alt="Adventure Time GIF" />
+      <section class="runner" data-state="loading" aria-label="Финн и Джейк">
+        <p class="runner-score" hidden>
+          <span>Счёт <b id="score">000</b></span>
+          <span>Рекорд <b id="best-score">000</b></span>
+        </p>
+        <canvas class="runner-track" width="320" height="142" aria-label="Финн и Джейк бегут по дороге">
+          Для игры нужен браузер с поддержкой Canvas.
+        </canvas>
+        <p class="runner-status" role="status"></p>
+      </section>
     </main>
     <script src="./js/script.js"></script>
   </body>
