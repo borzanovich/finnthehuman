@@ -338,6 +338,14 @@ async function init() {
   document.addEventListener("pointerdown", event => {
     if (event.isPrimary && event.button === 0 && !event.target.closest("button, a")) activate();
   });
+  // В Safari долгий тап может открыть меню поверх Canvas или счёта даже при user-select: none.
+  // Прыжок уже обработан через pointerdown, а отмена touchstart убирает системный жест.
+  document.addEventListener("touchstart", event => {
+    if (event.touches.length === 1) event.preventDefault();
+  }, { passive: false });
+  for (const type of ["selectstart", "contextmenu"]) {
+    document.addEventListener(type, event => event.preventDefault());
+  }
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) saveRecord();
     lastTick = undefined;
