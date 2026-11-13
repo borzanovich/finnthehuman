@@ -103,7 +103,7 @@ function setState(next) {
   runner.dataset.state = next;
   scoreLabel.hidden = next === "idle";
   status.textContent = next === "finished"
-    ? `Забег окончен. Счёт: ${formatScore(score)}. Рекорд: ${formatScore(best)}.`
+    ? `Game Over. Score: ${formatScore(score)}. Best: ${formatScore(best)}.`
     : "";
 }
 
@@ -319,7 +319,7 @@ async function loadSprite(name) {
 }
 
 async function init() {
-  if (!context) throw Error("Canvas недоступен");
+  if (!context) throw Error("Canvas is unavailable");
   const [finn, jake] = characters;
   [finn.runImage, jake.runImage, jake.jumpImage, obstacleImage] = await Promise.all([
     loadSprite("finn-sprites"),
@@ -359,6 +359,6 @@ async function init() {
 }
 
 init().catch(error => {
-  status.textContent = "Игра не загрузилась. Обновите страницу.";
+  status.textContent = "Game failed to load. Refresh to try again.";
   console.error(error);
 });

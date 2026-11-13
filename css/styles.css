@@ -28,7 +28,6 @@ body {
   min-height: 100svh;
   padding: 24px 16px;
   color: #fff;
-  font-family: system-ui, sans-serif;
   touch-action: manipulation;
 }
 
@@ -38,12 +37,12 @@ body {
   align-items: center;
   gap: clamp(24px, 6svh, 60px);
   width: min(100%, 960px);
+  font-family: "VMV Sega Genesis", monospace;
   text-align: center;
 }
 
 .hero-title {
   margin: 0;
-  font-family: "VMV Sega Genesis", monospace;
   font-size: clamp(14px, 2vw, 20px);
   line-height: 1.35;
   text-wrap: balance;
@@ -61,8 +60,8 @@ body {
   top: 0;
   right: 4px;
   margin: 0;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+  line-height: 1.5;
   font-variant-numeric: tabular-nums;
   text-shadow: 0 1px #0b1868;
 }
@@ -84,6 +83,6 @@ body {
   inset: 100% 0 auto;
   margin: 0;
   color: #0b1868;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+  line-height: 1.5;
 }
